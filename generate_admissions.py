@@ -43,7 +43,7 @@ def generate_admission_letters():
                 filename = f"{pinyin_name}.html"
                 
                 # 准备模板数据
-                issue_date = '2026 年 8 月 1 日'
+                issue_date = '2026 年 6 月 7 日'
                 
                 
                 motto = mottos[student['目标大学']]
