@@ -189,5 +189,23 @@
         <img src="icons/清华大学.png" class="stamp" alt="校章">
     </div>
 </body>
+<script>
+function switchAnimation(type) {
+    const cert = document.querySelector('.certificate');
+    cert.style.animation = 'none';
+    void cert.offsetWidth; // 触发重绘
+    
+    const animations = {
+        'original': 'scrollUnfoldOriginal 1.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'smooth': 'scrollUnfoldSmooth 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+    };
+    
+    cert.style.animation = animations[type];
+    
+    // 添加临时类触发动画
+    cert.classList.add('animating');
+    setTimeout(() => cert.classList.remove('animating'), 2000);
+}
+</script>
 
 </html>
