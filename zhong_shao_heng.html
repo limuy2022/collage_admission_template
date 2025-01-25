@@ -6,29 +6,88 @@
     <title>预录取通知书 - 香港科技大学</title>
     <style>
         body {
-            background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
+            background:
+                linear-gradient(145deg, #4a0808 0%, #6a0f0f 100%),
+                repeating-linear-gradient(45deg,
+                    rgba(255, 215, 0, 0.08) 0% 10%,
+                    transparent 10% 20%),
+                repeating-conic-gradient(from 30deg,
+                    rgba(255, 215, 0, 0.1) 0% 5%,
+                    transparent 5% 15%),
+                url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M20 180Q50 20 180 20" fill="none" stroke="%23ffd700" stroke-width="2" opacity="0.2" stroke-linecap="round"/></svg>'),
+                linear-gradient(30deg,
+                    rgba(255, 0, 0, 0.1) 0%,
+                    rgba(255, 215, 0, 0.05) 50%,
+                    rgba(255, 0, 0, 0.1) 100%);
             font-family: 'Microsoft Yahei', '宋体', sans-serif;
             padding: 50px;
             min-height: 100vh;
-            color: #2c3e50;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            animation:
+                bgFlow 30s linear infinite,
+                bgPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes bgFlow {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+            }
+
+            100% {
+                background-position: 600px 600px, 300px 300px, 900px 900px, 1200px 1200px, 1500px 1500px;
+            }
+        }
+
+        @keyframes bgPulse {
+
+            0%,
+            100% {
+                background-size: 100% 100%, auto, auto, auto, auto;
+                animation-timing-function: ease-out;
+            }
+
+            50% {
+                background-size: 103% 103%, auto, auto, auto, auto;
+                animation-timing-function: ease-in;
+            }
         }
 
         .certificate {
-            background: url('images/blue_bg.jpg') no-repeat center/cover,
-            white;
-            border-radius: 2px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(152deg,
+                rgba(255, 255, 255, 0.25) 0%,
+                rgba(255, 215, 0, 0.3) 50%,
+                rgba(255, 255, 255, 0.25) 100%),
+            url('images/blue_bg.jpg') no-repeat center/cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+                inset 0 0 80px rgba(255, 215, 0, 0.4),
+                0 0 50px rgba(255, 215, 0, 0.3);
             padding: 50px;
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            animation: scrollUnfold 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation:
+                scrollUnfold 1.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                certificateGlow 3s ease-in-out infinite;
             transform-origin: center center;
-            border-left: 15px solid #d5a368;
-            border-right: 15px solid #d5a368;
-            background: linear-gradient(to right, #fff 48%, #f5e6d3 50%, #fff 52%);
-            will-change: transform, clip-path;
+            border: 6px double #ffd700;
+            will-change: transform, clip-path, box-shadow;
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+        }
+
+        @keyframes certificateGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 80px rgba(255, 215, 0, 0.4), 0 0 50px rgba(255, 215, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), inset 0 0 100px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 215, 0, 0.5);
+            }
         }
 
         @keyframes scrollUnfold {
@@ -37,26 +96,31 @@
                 transform: scaleY(0.05) rotateZ(-0.5deg);
                 opacity: 0;
             }
+
             20% {
                 clip-path: inset(0 55% 0 55%);
                 transform: scaleY(0.2) rotateZ(0.2deg);
                 opacity: 0.4;
             }
+
             40% {
                 clip-path: inset(0 45% 0 45%);
                 transform: scaleY(0.5) rotateZ(0.5deg);
                 opacity: 0.7;
             }
+
             60% {
                 clip-path: inset(0 30% 0 30%);
                 transform: scaleY(0.8) rotateZ(0deg);
                 opacity: 0.9;
             }
+
             80% {
                 clip-path: inset(0 10% 0 10%);
                 transform: scaleY(0.95);
                 opacity: 1;
             }
+
             100% {
                 clip-path: inset(0 0 0 0);
                 transform: scaleY(1);
@@ -70,13 +134,11 @@
             top: 0;
             bottom: 0;
             width: 20px;
-            background: repeating-linear-gradient(
-                180deg,
-                #d5a368 0px,
-                #d5a368 10px,
-                #c08d4d 10px,
-                #c08d4d 20px
-            );
+            background: repeating-linear-gradient(180deg,
+                    #d5a368 0px,
+                    #d5a368 10px,
+                    #c08d4d 10px,
+                    #c08d4d 20px);
             z-index: 2;
         }
 
@@ -96,11 +158,10 @@
         }
 
         .header h1 {
-            font-size: 2.8em;
-            color: #1a5276;
+            font-size: 3.2em;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(45deg, #1a5276, #3498db);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ffd700, #c62828);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -130,9 +191,10 @@
 
         .content {
             line-height: 1.8;
-            font-size: 16px;
+            font-size: 18px;
             color: #333;
             margin: 40px 0;
+            font-weight: bold;
         }
 
         .highlight {
@@ -142,13 +204,27 @@
         }
 
         .motivation {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin: 40px 0;
-            border-left: 4px solid #3498db;
+            border: 2px solid #8b0000;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
             text-align: center;
             font-size: 25px;
+        }
+
+        .motivation::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent 50%, rgba(255, 215, 0, 0.1) 100%);
+            z-index: -1;
         }
 
         .motivation h3 {
@@ -190,22 +266,22 @@
     </div>
 </body>
 <script>
-function switchAnimation(type) {
-    const cert = document.querySelector('.certificate');
-    cert.style.animation = 'none';
-    void cert.offsetWidth; // 触发重绘
-    
-    const animations = {
-        'original': 'scrollUnfoldOriginal 1.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
-        'smooth': 'scrollUnfoldSmooth 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-    };
-    
-    cert.style.animation = animations[type];
-    
-    // 添加临时类触发动画
-    cert.classList.add('animating');
-    setTimeout(() => cert.classList.remove('animating'), 2000);
-}
+    function switchAnimation(type) {
+        const cert = document.querySelector('.certificate');
+        cert.style.animation = 'none';
+        void cert.offsetWidth; // 触发重绘
+
+        const animations = {
+            'original': 'scrollUnfoldOriginal 1.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            'smooth': 'scrollUnfoldSmooth 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        };
+
+        cert.style.animation = animations[type];
+
+        // 添加临时类触发动画
+        cert.classList.add('animating');
+        setTimeout(() => cert.classList.remove('animating'), 2000);
+    }
 </script>
 
 </html>
