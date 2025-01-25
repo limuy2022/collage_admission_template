@@ -6,7 +6,7 @@ from pathlib import Path
 # 配置参数
 CSV_FILE = '目标大学.csv'
 QRCODE_DIR = 'pic'
-BASE_URL = 'https://senior_admission.limuy.top/{pinyin}.html'
+BASE_URL = 'https://collageadmission.limuy.top/{pinyin}.html'
 QRCODE_SIZE = 10  # 二维码尺寸级别 (1-40)
 QRCODE_BORDER = 2  # 二维码白边尺寸
 QRCODE_VERSION = 15  # 二维码版本 (1-40)
