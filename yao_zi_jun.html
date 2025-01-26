@@ -71,18 +71,21 @@
                 certificateGlow 3s ease-in-out infinite;
             transform-origin: center center;
             will-change: transform, clip-path, box-shadow;
-            background: #d48b37 !important;
-            /* 金属金色背景 */
-            border: 6px double #B8860B;
-            /* 暗金色边框 */
-            box-shadow:
-                0 10px 40px rgba(0, 0, 0, 0.6),
-                inset 0 0 80px #FFD700,
-                /* 金色内发光 */
-                0 0 50px #FFD700;
             /* 金色外发光 */
             filter: none;
             /* 移除投影滤镜 */
+            background: #ffae00 !important;
+            /* 标准亮金色背景 */
+            border: 6px double #FFC125;
+            /* 浅金色边框 */
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.6),
+                inset 0 0 80px rgba(255, 223, 0, 0.8),
+                /* 亮金内发光 */
+                0 0 50px rgba(255, 215, 0, 0.6);
+            /* 亮金外发光 */
+            filter: brightness(1.05);
+            /* 亮度提升5% */
         }
 
         @keyframes certificateGlow {
@@ -177,6 +180,10 @@
             transform: perspective(800px) rotateX(25deg);
             text-decoration-color: #d5a368;
             text-decoration-thickness: 3px;
+
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         .header h1 .university-name {
@@ -264,6 +271,10 @@
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
+
+        .issue-date {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -273,7 +284,7 @@
         <div class="header">
             <h1><span class="university-name">南京大学</span></h1>
             <h1>预录取通知书</h1>
-            <p>签发日期：2026 年 6 月 7 日</p>
+            <p class="issue-date">签发日期：2026 年 6 月 7 日</p>
         </div>
 
         <div class="content">
@@ -285,8 +296,8 @@
                 <p>诚朴雄伟，励学敦行</p>
             </div>
 
-            <p>请凭本通知书于2026年9月1日来校报到，</p>
-            <p>并踏上大学旅途新的起点</p>
+            <p>请凭本通知书于 2026 年 9 月 1 日来校报到，</p>
+            <p>并踏上大学旅途新的起点。</p>
         </div>
 
         <img src="icons/南京大学.png" class="stamp" alt="校章">
