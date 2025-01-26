@@ -20,7 +20,6 @@
                     rgba(255, 215, 0, 0.05) 50%,
                     rgba(255, 0, 0, 0.1) 100%);
             font-family: 'Microsoft Yahei', '宋体', sans-serif;
-            padding: 50px;
             min-height: 100vh;
             color: #fff;
             position: relative;
@@ -28,6 +27,11 @@
             animation:
                 bgFlow 30s linear infinite,
                 bgPulse 8s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
         }
 
         @keyframes bgFlow {
@@ -66,7 +70,8 @@
                 0 0 50px rgba(255, 215, 0, 0.3);
             padding: 50px;
             max-width: 800px;
-            margin: 0 auto;
+            width: 90%;
+            margin: auto;
             position: relative;
             overflow: hidden;
             animation:
