@@ -168,7 +168,7 @@
             position: relative;
             padding: 10px 0;
             transform: perspective(800px) rotateX(25deg);
-            text-decoration: underline;
+            /* text-decoration: underline; */
             text-decoration-color: #d5a368;
             text-decoration-thickness: 3px;
         }
@@ -182,7 +182,7 @@
         }
 
         .stamp {
-            width: 150px;
+            width: 200px;
             position: absolute;
             bottom: 20px;
             right: 20px;
@@ -191,10 +191,15 @@
 
         .content {
             line-height: 1.8;
-            font-size: 18px;
+            font-size: 22px;
             color: #333;
             margin: 40px 0;
             font-weight: bold;
+            text-indent: 2em;
+        }
+
+        .content-header {
+            text-indent: 0em;
         }
 
         .highlight {
@@ -228,13 +233,13 @@
         }
 
         .motivation h3 {
-            font-size: 2.0em;
+            font-size: 1.5em;
             color: #1a5276;
             margin-bottom: 15px;
         }
 
         .motivation p {
-            font-size: 1.2em;
+            font-size: 2.0em;
             color: #2c3e50;
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -246,12 +251,12 @@
     <div class="certificate">
         <img src="icons/清华大学.png" class="university-logo" alt="校徽">
         <div class="header">
-            <h1>清华大学预录取通知书</h1>
+            <h1>清华大学 预录取通知书</h1>
             <p>签发日期：2026 年 6 月 7 日</p>
         </div>
 
         <div class="content">
-            <p>亲爱的<span class="highlight">王翰林</span>同学：</p>
+            <p class="content-header">亲爱的 <span class="highlight">王翰林</span> 同学：</p>
             <p>经审核，你已被我校预录取为2026级新生。在此谨代表全校师生，热烈欢迎你加入<span class="highlight">清华大学</span>大家庭！</p>
 
             <div class="motivation">
